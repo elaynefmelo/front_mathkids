@@ -1,12 +1,17 @@
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 import { styles } from "./styles";
+import Button from "@/src/components/Button";
 
 export default function Index(){
+    const entrar = () => {
+        alert('Cliquei')
+    }
     return(
         <View style={styles.container}>
-            <Text style={styles.title}>
-                MathKids
-            </Text>
+            <Image style={styles.logo}
+                source={require('../../assets/logo.png')}
+            />
+            <Button textobotao='Entrar' pressione={entrar}  />
         </View>
     )
 }
