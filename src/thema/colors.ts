@@ -14,6 +14,9 @@ export const colors = {
     yellow_alert: "#FFC805",
     red_danger: "#DD3556" ,
 
+    //bordasbotão
+    border: "#DADADA",
+
 
 
 }

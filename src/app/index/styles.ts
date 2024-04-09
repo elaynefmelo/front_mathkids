@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         paddingBottom: 200,
+        paddingTop: 200,
     },
     title: {
         fontSize: theme.fonts.size.heading.xl,
@@ -18,8 +19,12 @@ export const styles = StyleSheet.create({
         color: theme.colors.green_p
     },
     logo: {
+
         width: 200, 
         height: 300, 
         resizeMode: 'contain', 
+        marginTop: 50,
+        marginBottom: 20
+       
     },
 })

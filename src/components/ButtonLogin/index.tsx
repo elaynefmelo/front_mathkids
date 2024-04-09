@@ -4,11 +4,11 @@ import { styles } from './styles'
 import { LinearGradient } from "expo-linear-gradient"
  
 
-const Button = ({ textobotao, pressione}) => {
+const ButtonLogin = ({ textobotao, pressione}) => {
     return (
         <TouchableOpacity style={[styles.button]} onPress={pressione}>
             <LinearGradient
-                colors={["#57E447", "#307E27"]}   
+                colors={["#7600B5", "#68089B"]}   
                 style={styles.gradiente}          
             />
             <Text style={styles.buttonText}> {textobotao} </Text>    
@@ -16,4 +16,4 @@ const Button = ({ textobotao, pressione}) => {
     )
 }
 
-export default Button 
+export default ButtonLogin 
