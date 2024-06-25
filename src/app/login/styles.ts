@@ -18,8 +18,8 @@ export const styles = StyleSheet.create({
         width: 180, 
         height: 280, 
         resizeMode: 'contain', 
-        marginTop: 150,
-        marginBottom: -50,
+        marginTop: 50,
+        //marginBottom: -50,
     },
     containerConteudo: {
         flex: 1,

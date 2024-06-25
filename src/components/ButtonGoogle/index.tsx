@@ -1,10 +1,14 @@
 import React from 'react';
-import { TouchableOpacity, Image,  } from 'react-native';
+import { TouchableOpacity, Image, ImageSourcePropType,  } from 'react-native';
 import { styles } from './styles';
 import { LinearGradient } from "expo-linear-gradient"
- 
 
-const ButtonGoogle = ({ pressione, source }) =>  {
+interface ButtonProps {
+    pressione: () => void;
+    source: ImageSourcePropType; // Tipo para a imagem
+}
+
+const ButtonGoogle: React.FC<ButtonProps>= ({ pressione, source }) =>  {
     return (
         <TouchableOpacity style={[styles.button]} onPress={pressione}>
             <LinearGradient

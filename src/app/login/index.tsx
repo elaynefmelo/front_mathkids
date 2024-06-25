@@ -7,7 +7,7 @@ import { router } from "expo-router";
 export default function Login(){
 
     const irParaInicio = () => {
-        router.navigate("/telaInicial/")
+        router.navigate("/telaAulas/")
     }
 
     return(

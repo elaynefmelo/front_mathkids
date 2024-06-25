@@ -3,8 +3,12 @@ import { Text, TouchableOpacity } from 'react-native'
 import { styles } from './styles'
 import { LinearGradient } from "expo-linear-gradient"
  
+interface ButtonProps {
+    textobotao: string;
+    pressione: () => void;
+}
 
-const ButtonLogin = ({ textobotao, pressione}) => {
+const ButtonLogin: React.FC<ButtonProps> = ({ textobotao, pressione}) => {
     return (
         <TouchableOpacity style={[styles.button]} onPress={pressione}>
             <LinearGradient
