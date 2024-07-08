@@ -17,6 +17,7 @@ export const styles = StyleSheet.create({
     padding: 10,
   },
   menuText: {
+    fontFamily: theme.fonts.family.bold,
     color: 'white',
     marginTop: 5,
   },
@@ -24,6 +25,6 @@ export const styles = StyleSheet.create({
     // Adicione aqui o estilo para item selecionado, se desejar
   },
   menuTextSelected: {
-    color: 'green',
+    color: theme.colors.green_p,
   },
 });
