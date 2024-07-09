@@ -1,23 +1,21 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { styles } from "./styles";
+import Menu from '@/src/components/Menu';
+import Header from '@/src/components/Header';
+
 
 const Pratica = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Página de Prática</Text>
+       <Header
+          title="Prática"
+          iconSource={require('@/src/assets/Drawing.png')}
+        />
+     <Menu />
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 20,
-  },
-});
 
 export default Pratica;

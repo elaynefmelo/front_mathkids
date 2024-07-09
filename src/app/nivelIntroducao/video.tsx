@@ -1,23 +1,19 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { styles } from "./styles";
+import Menu from '@/src/components/Menu';
+import Header from '@/src/components/Header';
 
 const Video = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Página de Vídeo</Text>
+      <Header
+          title="Vídeo"
+          iconSource={require('@/src/assets/Video.png')}
+        />
+      <Menu />
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 20,
-  },
-});
 
 export default Video;
