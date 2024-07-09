@@ -11,4 +11,10 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         paddingBottom: 200,
     },   
+    row: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        margin: 30,
+        marginBottom: 20,
+     },
 })
