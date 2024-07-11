@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
     iconTitleContainer: {
       flexDirection: 'row',
       alignItems: 'center',
+      marginLeft: 10,
     },
     icon: {
       width: 30,
@@ -35,5 +36,6 @@ export const styles = StyleSheet.create({
     logo: {
       width: 50,
       height: 50,
+      marginRight: 15,
     },
   });

@@ -33,7 +33,7 @@ const TelaAulas = () => {
                 title="Aulas"
                 iconSource={require('@/src/assets/Maths.png')}
             />
-            <View style={{ marginTop: 40 }}>
+            <View style={{ marginTop: 400}}>
                 <BlocoNiveis 
                     title={"Introdução"} 
                     iconSource={require('@/src/assets/Egg.png')} 
@@ -60,6 +60,31 @@ const TelaAulas = () => {
                 title={"Nível Básico"} 
                 iconSource={require('@/src/assets/Dinosaur.png')} 
             />
+             <View style={styles.row}>
+                <ActivityButton
+                    iconSource={require('@/src/assets/Idea.png')}
+                    title="Revisão"
+                    subtitle="Conteúdo da aula"
+                    status={activityStatus.video}
+                    route="/nivelBasico/revisao"
+                />
+            </View>
+            <View style={styles.row}>
+                <ActivityButton
+                    iconSource={require('@/src/assets/Video.png')}
+                    title="Vídeo"
+                    subtitle="Conteúdo da aula"
+                    status={activityStatus.video}
+                    route="/nivelBasico/video"
+                />
+                <ActivityButton
+                    iconSource={require('@/src/assets/Drawing.png')}
+                    title="Prática"
+                    subtitle="Conteúdo da aula"
+                    status={activityStatus.video}
+                    route="/nivelBasico/pratica"
+                />
+            </View>
             <Menu />
         </View>
     );
