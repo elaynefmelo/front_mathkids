@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { styles } from "./styles";
-import Menu from '@/src/components/Menu';
 import Header from '@/src/components/Header';
+import BackButton from '@/src/components/BackButton';
 
 const Video = () => {
   return (
@@ -11,7 +11,7 @@ const Video = () => {
           title="Vídeo"
           iconSource={require('@/src/assets/Video.png')}
         />
-      <Menu />
+      <BackButton />
     </View>
   );
 };

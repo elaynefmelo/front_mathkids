@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { styles } from "./styles";
-import Menu from '@/src/components/Menu';
 import Header from '@/src/components/Header';
+import BackButton from '@/src/components/BackButton';
 
 
 const Pratica = () => {
@@ -12,7 +12,7 @@ const Pratica = () => {
           title="Prática"
           iconSource={require('@/src/assets/Drawing.png')}
         />
-     <Menu />
+        <BackButton />
     </View>
   );
 };
