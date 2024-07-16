@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
       position: 'absolute',
       top: 0,
       left: 0,
+      zIndex: 1, 
     },
     iconTitleContainer: {
       flexDirection: 'row',
@@ -38,4 +39,5 @@ export const styles = StyleSheet.create({
       height: 50,
       marginRight: 15,
     },
+   
   });

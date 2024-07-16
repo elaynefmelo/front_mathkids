@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, ImageSourcePropType, Dimensions } from 'react-native';
+import { View, Text, Image,ImageSourcePropType} from 'react-native';
 import { styles } from './styles'
 
 interface BlocoNiveisProps {
