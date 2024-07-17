@@ -23,7 +23,7 @@ const Sair: React.FC<SairProps> = ({ isVisible, onClose }) => {
     <Modal animationType="slide" transparent={true} visible={isVisible}>
       <View style={styles.overlay}>
         <View style={styles.container}>
-          <Image source={require('C:/Users/andre/Desktop/ProjESE/front_mathkids/src/assets/Logout.png')} style={styles.icon} />
+          <Image source={require('../../assets/Logout.png')} style={styles.icon} />
           <Text style={styles.text}>Tem certeza que quer sair?</Text>
           <View style={styles.buttons}>
             <TouchableOpacity style={[styles.button, styles.buttonYes]} onPress={handleLogout}>
