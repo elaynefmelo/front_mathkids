@@ -5,16 +5,21 @@ import { theme } from "@/src/thema";
 export const styles = StyleSheet.create({
     container:{
         flex: 1,
-        padding: 24,
+        paddingTop: 24,
         backgroundColor: theme.colors.gray_8,
-        justifyContent: 'center',
+        paddingBottom: 10,
+    
+    },  
+    scrollViewContent: {
+        paddingTop: 80, 
+        paddingBottom: 60, 
         alignItems: 'center',
-        paddingBottom: 200,
-    },   
+    }, 
     row: {
         flexDirection: 'row',
         justifyContent: 'space-around',
-        margin: 30,
+        margin: 10,
         marginBottom: 20,
+        width: '100%'
      },
 })

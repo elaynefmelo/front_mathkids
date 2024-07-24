@@ -2,18 +2,17 @@ import React from 'react';
 import { View, Text, Image,ImageSourcePropType} from 'react-native';
 import { styles } from './styles'
 
-interface BlocoNiveisProps {
-  title: string;
-  iconSource: ImageSourcePropType; 
+interface BlocoQuestoesProps {
+  title: string; 
 }
 
-const BlocoNiveis: React.FC<BlocoNiveisProps> = ({ title, iconSource }) => {
+const BlocoQuestoes: React.FC<BlocoQuestoesProps> = ({ title }) => {
   return (
     <View style={styles.container}>
-      <Image source={iconSource} style={styles.icon} />
+
       <Text style={styles.title}>{title}</Text>
     </View>
   );
 };
 
-export default BlocoNiveis;
+export default BlocoQuestoes;

@@ -16,10 +16,12 @@ export const styles = StyleSheet.create({
       position: 'absolute',
       top: 0,
       left: 0,
+      zIndex: 1, 
     },
     iconTitleContainer: {
       flexDirection: 'row',
       alignItems: 'center',
+      marginLeft: 10,
     },
     icon: {
       width: 30,
@@ -35,5 +37,7 @@ export const styles = StyleSheet.create({
     logo: {
       width: 50,
       height: 50,
+      marginRight: 15,
     },
+   
   });
