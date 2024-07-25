@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   barContainer: {
     width: 400,
-    height: 150,
+    height: 130,
     borderRadius: 15,
     borderColor: 'gray',
     borderWidth: 1,
@@ -42,6 +42,6 @@ export const styles = StyleSheet.create({
   },
   progressText: {
     fontSize: 16,
-  },
+  }
 });
 
