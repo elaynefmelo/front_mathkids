@@ -5,19 +5,17 @@ import Header from '@/src/components/Header';
 import BackButton from '@/src/components/BackButton';
 import BlocoQuestoes from '@/src/components/BlocoQuestoes';
 
-
-const Pratica = () => {
+const Video = () => {
   return (
     <View style={styles.container}>
-       <Header
-          title="Prática"
-          iconSource={require('@/src/assets/Drawing.png')}
+      <Header
+          title="Vídeo"
+          iconSource={require('@/src/assets/Video.png')}
         />
-        <BackButton />
-        <BlocoQuestoes title={'Qual sinal usamos para fazer as somas?'} />
+      <BackButton />
+      <BlocoQuestoes title={'Vamos assistir um vídeo e aprender'} />
     </View>
   );
 };
 
-
-export default Pratica;
+export default Video;

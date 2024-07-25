@@ -25,7 +25,8 @@ export const styles = StyleSheet.create({
     },
     subtitle: {
       fontSize: 12,
-      color: theme.colors.purple_p,
+      color: theme.colors.gray_3,
+      fontWeight: 'semibold',
     },
     notStarted: {
       backgroundColor: '#B9BBBC',

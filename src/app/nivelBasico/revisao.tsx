@@ -10,8 +10,8 @@ const Pratica = () => {
   return (
     <View style={styles.container}>
        <Header
-          title="Prática"
-          iconSource={require('@/src/assets/Drawing.png')}
+          title="Revisão"
+          iconSource={require('@/src/assets/Idea.png')}
         />
         <BackButton />
         <BlocoQuestoes title={'Qual sinal usamos para fazer as somas?'} />
