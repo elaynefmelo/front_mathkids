@@ -5,21 +5,47 @@ import ButtonAcess from '@/src/components/ButtonAcess';
 import ButtonGoogle from '@/src/components/ButtonGoogle';
 import PopUp from '../avisos/avisos'; 
 import { router } from 'expo-router';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Login() {
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
     const [isPopUpVisible, setIsPopUpVisible] = useState(false);
+    const [popUpMessage, setPopUpMessage] = useState({ title: '', subtitle: '' });
 
-    const irParaInicio = () => {
-        setIsPopUpVisible(true);
-        setTimeout(() => {
-            setIsPopUpVisible(false);
-            router.navigate("/telaAulas/");
-        }, 4000); 
-    }
+    const handleLogin = async () => {
+        try {
+            const response = await fetch('http://localhost:8080/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password: senha }),
+            });
+
+            const data = await response.json();
+
+            if (response.status === 200) {
+                await AsyncStorage.setItem('userData', JSON.stringify(data.user)); 
+                setPopUpMessage({ title: "Login bem-sucedido", subtitle: "Você será redirecionado" });
+                setIsPopUpVisible(true);
+                setTimeout(() => {
+                    setIsPopUpVisible(false);
+                    router.navigate("/telaAulas/");
+                }, 2000);
+            } else {
+                setPopUpMessage({ title: "Email ou senha incorretos", subtitle: data.message || "Tente novamente" });
+                setIsPopUpVisible(true);
+            }
+        } catch (error) {
+            setPopUpMessage({ title: "Erro no servidor", subtitle: "Não foi possível realizar o login" });
+            setIsPopUpVisible(true);
+        }
+    };
 
     const handleClosePopUp = () => {
         setIsPopUpVisible(false);
-    }
+    };
 
     return (
         <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
@@ -32,29 +58,30 @@ export default function Login() {
                     style={styles.input}
                     placeholder="Email"
                     autoCorrect={false}
-                    onChangeText={() => {}}
+                    onChangeText={(text) => setEmail(text)}
                 />
                 <TextInput 
                     style={styles.input}
                     placeholder="Senha"
+                    secureTextEntry
                     autoCorrect={false}
-                    onChangeText={() => {}}
+                    onChangeText={(text) => setSenha(text)}
                 />
                 <TouchableOpacity style={styles.recuperarSenha}>
                     <Text style={styles.textoSenha}>Esqueceu a senha?</Text>
                 </TouchableOpacity>
-                <ButtonAcess textobotao='Entrar' pressione={irParaInicio} />
+                <ButtonAcess textobotao='Entrar' pressione={handleLogin} />
                 <Text style={styles.textoAcesso}>
                     Ou entre com o Google
                 </Text>
-                <ButtonGoogle pressione={irParaInicio} source={require('../../assets/google.png')} />
+                <ButtonGoogle pressione={handleLogin} source={require('../../assets/google.png')} />
             </View>
 
             <PopUp 
                 isVisible={isPopUpVisible} 
                 onClose={handleClosePopUp} 
-                title="Email ou senha incorretos"
-                subtitle="Tente novamente"
+                title={popUpMessage.title}
+                subtitle={popUpMessage.subtitle}
                 imageSource={require('../../assets/Surprise.png')} 
                 buttonText="OK"
             />
