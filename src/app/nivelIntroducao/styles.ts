@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 1,
-    padding: 15,
+    padding: 10,
     justifyContent: 'flex-start', // Alinha os componentes no início do container
   },
   text: {

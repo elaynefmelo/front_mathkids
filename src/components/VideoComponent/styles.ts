@@ -1,8 +1,7 @@
-import { theme } from '@/src/thema';
 import { StyleSheet } from "react-native";
 
 export const VIDEO_HEIGHT = 220;
-export const SCREEN_SPACE = 24
+export const SCREEN_SPACE = 24;
 
 export const styles = StyleSheet.create({
   container: {
@@ -10,18 +9,22 @@ export const styles = StyleSheet.create({
     padding: SCREEN_SPACE,
   },
   infoContainer: {
+    flexDirection: 'row', // Alinhar os itens na horizontal
+    alignItems: 'center', // Alinhar os itens verticalmente no centro
     marginBottom: 10,
   },
   moduleName: {
-    fontSize: 16,
+    fontSize: 22, // Ajustar o tamanho da fonte
     fontWeight: 'bold',
-    color: '#333',
+    color: '#555', // Ajustar a cor da fonte
+    marginRight: 10, // Espaçamento entre moduleName e videoTitle
   },
   videoTitle: {
-    fontSize: 14,
-    color: '#555',
+    fontSize: 20, // Ajustar o tamanho da fonte
+    color: '#777', // Ajustar a cor da fonte
   },
   player: {
     alignItems: 'center',
+    marginTop: 10, // Adicionar um pouco de espaçamento superior
   },
 });

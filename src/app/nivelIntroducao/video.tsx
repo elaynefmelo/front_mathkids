@@ -4,7 +4,7 @@ import Header from '@/src/components/Header';
 import BackButton from '@/src/components/BackButton';
 import BlocoQuestoes from '@/src/components/BlocoQuestoes';
 import { styles } from './styles';
-import { VideoComponent } from '@/src/components/VideoComponent';
+import VideoScreen from '@/src/components/VideoComponent/VideoScreen';
 
 const Video = () => {
 
@@ -18,11 +18,7 @@ const Video = () => {
       <BackButton />
       <View style={styles.contentContainer}>
         <BlocoQuestoes title={'Vamos assistir um vídeo e aprender'} />
-        <VideoComponent 
-            videoId="prsJNR0Zbqg"
-            moduleName="Módulo 1"
-            videoTitle="Título do Vídeo"
-          />
+        <VideoScreen moduleId={1} />
       </View>
      
       
