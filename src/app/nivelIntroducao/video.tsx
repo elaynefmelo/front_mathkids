@@ -3,27 +3,27 @@ import { View, Alert } from 'react-native';
 import Header from '@/src/components/Header';
 import BackButton from '@/src/components/BackButton';
 import BlocoQuestoes from '@/src/components/BlocoQuestoes';
-import VideoComponent from '@/src/components/VideoComponent';
 import { styles } from './styles';
+import { VideoComponent } from '@/src/components/VideoComponent';
 
 const Video = () => {
 
-  const handleVerifyPress = () => {
-    Alert.alert('Verificado!', 'Você acertou a resposta.');
-  };
-
   return (
+  
     <View style={styles.container}>
       <Header
         title="Vídeo"
-        iconSource={require('@/src/assets/Video.png')}
+        iconSource={require('@/src/assets/Video.png')} 
       />
       <BackButton />
       <View style={styles.contentContainer}>
         <BlocoQuestoes title={'Vamos assistir um vídeo e aprender'} />
-        <VideoComponent moduleId={1} />
+        <VideoComponent/>
       </View>
+     
+      
     </View>
+    
   );
 };
 

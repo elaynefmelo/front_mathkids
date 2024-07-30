@@ -5,11 +5,11 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f0f0f0',
-    paddingTop: 180,
+    paddingTop: 200,
   },
   contentContainer: {
     flex: 1,
-    padding: 20,
+    padding: 15,
     justifyContent: 'flex-start', // Alinha os componentes no início do container
   },
   text: {

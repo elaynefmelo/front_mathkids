@@ -1,85 +1,41 @@
-// src/components/VideoComponent.tsx
-import React, { useEffect, useState } from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator, useWindowDimensions, Alert } from "react-native";
+import YoutubeIframe, { PLAYER_STATES } from "react-native-youtube-iframe";
+import { styles, VIDEO_HEIGHT, SCREEN_SPACE } from "./styles"
+import { useCallback, useState } from "react";
+import * as ScreemOrientation from "expo-screen-orientation";
 
-interface VideoComponentProps {
-  moduleId: number;
-}
 
-interface ModuleData {
-  id: number;
-  moduleTitle: string;
-  videoTitle: string;
-  videoUrl: string;
-  thumbnailUrl: string;
-  createdAt: string;
-  updatedAt: string;
-}
+ export function VideoComponent(){
 
-const VideoComponent: React.FC<VideoComponentProps> = ({ moduleId }) => {
-  const [moduleData, setModuleData] = useState<ModuleData | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [videoReady, setVideoReady] = useState(false);
+  const {width} = useWindowDimensions();
+  const VIDEO_WIDTH = width - (SCREEN_SPACE * 2);
+  const onFullScreenChange = useCallback((isFullScrean:boolean) => {
+    if(isFullScrean){
+      ScreemOrientation.lockAsync(ScreemOrientation.OrientationLock.LANDSCAPE)
+    } else {
+      ScreemOrientation.lockAsync(ScreemOrientation.OrientationLock.PORTRAIT)
+    }
+  },[])
 
-  useEffect(() => {
-    const fetchModuleData = async () => {
-      try {
-        const response = await fetch('https://mathkids-server.onrender.com/modules');
-        const data = await response.json();
-        const module = data.modules.find((mod: ModuleData) => mod.id === moduleId);
-        setModuleData(module);
-      } catch (error) {
-        console.error('Erro ao buscar dados do módulo:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchModuleData();
-  }, [moduleId]);
-
-  if (loading) {
-    return <ActivityIndicator size="large" color="#0000ff" />;
-  }
-
-  if (!moduleData) {
-    return <Text>Módulo não encontrado</Text>;
-  }
-
-  return (
+  const onChangeState = useCallback((state:string) => {
+    if(state === PLAYER_STATES.ENDED){
+      Alert.alert("Parabéns, você finalizou o vídeo!")
+    }
+  },[])
+  return(
     <View style={styles.container}>
-      <Text style={styles.moduleTitle}>{moduleData.moduleTitle} - {moduleData.videoTitle}</Text>
-      <TouchableOpacity style={styles.thumbnailContainer}>
-        <Image
-          source={{ uri: moduleData.thumbnailUrl }}
-          style={styles.thumbnail}
-          resizeMode="cover"
+      <View style={styles.player}>
+        <YoutubeIframe 
+          videoId="prsJNR0Zbqg" 
+          height={videoReady ? VIDEO_HEIGHT : 0}
+          width={VIDEO_WIDTH}
+          onReady={() => setVideoReady(true)}
+          onFullScreenChange={onFullScreenChange}
+          onChangeState={onChangeState}
         />
-      </TouchableOpacity>
+        {!videoReady && <ActivityIndicator color="#57E447" />}
+      </View>
     </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    marginVertical: 20,
-  },
-  moduleTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 10,
-    textAlign: 'center',
-  },
-  thumbnailContainer: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 10,
-    overflow: 'hidden',
-  },
-  thumbnail: {
-    width: 300,
-    height: 200,
-  },
-});
-
-export default VideoComponent;
+  )
+ }
