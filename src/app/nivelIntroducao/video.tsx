@@ -18,7 +18,11 @@ const Video = () => {
       <BackButton />
       <View style={styles.contentContainer}>
         <BlocoQuestoes title={'Vamos assistir um vídeo e aprender'} />
-        <VideoComponent/>
+        <VideoComponent 
+            videoId="prsJNR0Zbqg"
+            moduleName="Módulo 1"
+            videoTitle="Título do Vídeo"
+          />
       </View>
      
       
