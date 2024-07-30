@@ -3,7 +3,7 @@ import { theme } from '@/src/thema';
 
 export const styles = StyleSheet.create({
     container: {
-      width: Dimensions.get('window').width, // Ajusta a largura dinamicamente
+      width: '100%', // Ajusta a largura dinamicamente
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-between',

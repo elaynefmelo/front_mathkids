@@ -11,8 +11,10 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
     },
     conteinerSec:{
-        justifyContent: 'center',
-        alignItems: 'center',
+        width: '100%',
+        paddingVertical: 20,
+        margin: '10%',
+        marginTop:'25%',
     },
     imageV:{
         width:40,
@@ -22,7 +24,7 @@ export const styles = StyleSheet.create({
     progreEta:{
         padding: 10,
         margin: 15,
-        width: 400,
+        width: '95%',
         height: 60,
         borderRadius: 15,
         borderColor: 'gray',
@@ -35,13 +37,12 @@ export const styles = StyleSheet.create({
     },  
     texto:{
         margin: 10,
-        fontSize:16
+        fontSize:16,
+
     },
     textoT:{
         margin: 15,
-        fontSize: 20,
-        alignItems: 'center',
-        justifyContent: 'center',
+        fontSize: 22,
         color: '#7600B5',
     },
     textoP:{

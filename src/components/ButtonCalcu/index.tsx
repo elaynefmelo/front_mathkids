@@ -1,23 +1,19 @@
 import React from 'react'
 import { Text, TouchableOpacity } from 'react-native'
-import { styles } from './styles'
+import { styles } from './styles';
 import { LinearGradient } from "expo-linear-gradient"
 
-interface ButtonProps {
+interface ButtonCalcu {
     textobotao: string;
     pressione: () => void;
 }
 
-const Button: React.FC<ButtonProps>= ({ textobotao, pressione }) => {
+const ButtonC: React.FC<ButtonCalcu>= ({ textobotao, pressione }) => {
     return (
         <TouchableOpacity style={[styles.button]} onPress={pressione}>
-            <LinearGradient
-                colors={["#57E447", "#307E27"]}   
-                style={styles.gradiente}          
-            />
             <Text style={styles.buttonText}> {textobotao} </Text>    
        </TouchableOpacity>
     )
 }
 
-export default Button
+export default ButtonC 
