@@ -32,8 +32,9 @@ export function VideoComponent({ videoId, moduleName, videoTitle }: VideoCompone
   return (
     <View style={styles.container}>
       <View style={styles.infoContainer}>
-        <Text style={styles.moduleName}>{moduleName}</Text>
-        <Text style={styles.videoTitle}>{videoTitle}</Text>
+        <Text style={styles.moduleTitle}>
+          {moduleName} - {videoTitle}
+        </Text>
       </View>
       <View style={styles.player}>
         <YoutubeIframe
