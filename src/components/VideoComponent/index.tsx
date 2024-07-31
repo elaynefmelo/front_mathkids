@@ -8,9 +8,10 @@ interface VideoComponentProps {
   videoId: string;
   moduleName: string;
   videoTitle: string;
+  onVideoEnd: () => void; // Adicionar a prop onVideoEnd
 }
 
-export function VideoComponent({ videoId, moduleName, videoTitle }: VideoComponentProps) {
+export function VideoComponent({ videoId, moduleName, videoTitle, onVideoEnd }: VideoComponentProps) {
   const [videoReady, setVideoReady] = useState(false);
   const { width } = useWindowDimensions();
   const VIDEO_WIDTH = width - (SCREEN_SPACE * 2);
@@ -25,9 +26,9 @@ export function VideoComponent({ videoId, moduleName, videoTitle }: VideoCompone
 
   const onChangeState = useCallback((state: string) => {
     if (state === PLAYER_STATES.ENDED) {
-      Alert.alert("Parabéns, você finalizou o vídeo!");
+      onVideoEnd(); // Chamar a função passada como prop quando o vídeo terminar
     }
-  }, []);
+  }, [onVideoEnd]);
 
   return (
     <View style={styles.container}>

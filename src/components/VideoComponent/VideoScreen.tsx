@@ -1,17 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { View, ActivityIndicator, Alert, Text } from 'react-native';
 import { VideoComponent } from './index';
 import { styles } from './styles';
+import PopUp from "@/src/app/avisos/avisos";
+import ImageSource from "@/src/assets/Happy.png"; 
 
 interface VideoScreenProps {
   moduleId: number;
 }
 
-const cache: any = {}; 
+const cache: any = {};
 
 export default function VideoScreen({ moduleId }: VideoScreenProps) {
   const [videoData, setVideoData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [isPopUpVisible, setIsPopUpVisible] = useState(false);
+  const [popUpTitle, setPopUpTitle] = useState('');
+  const [popUpSubtitle, setPopUpSubtitle] = useState('');
+  const [popUpImageSource, setPopUpImageSource] = useState<any>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,6 +47,12 @@ export default function VideoScreen({ moduleId }: VideoScreenProps) {
     fetchData();
   }, [moduleId]);
 
+  const handleVideoEnd = useCallback(() => {
+    setPopUpTitle('Parabéns, você finalizou o vídeo!');
+    setPopUpImageSource(ImageSource); 
+    setIsPopUpVisible(true); 
+  }, []);
+
   if (loading) {
     return <ActivityIndicator size="large" color="#57E447" />;
   }
@@ -59,6 +71,15 @@ export default function VideoScreen({ moduleId }: VideoScreenProps) {
         videoId={videoData.videoUrl}
         moduleName={videoData.moduleTitle}
         videoTitle={videoData.videoTitle}
+        onVideoEnd={handleVideoEnd} 
+      />
+      <PopUp
+        isVisible={isPopUpVisible}
+        onClose={() => setIsPopUpVisible(false)}
+        title={popUpTitle}
+        subtitle={popUpSubtitle}
+        imageSource={popUpImageSource}
+        buttonText="Fechar"
       />
     </View>
   );

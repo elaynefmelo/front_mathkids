@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Alert } from 'react-native';
+import { View } from 'react-native';
 import Header from '@/src/components/Header';
 import BackButton from '@/src/components/BackButton';
 import BlocoQuestoes from '@/src/components/BlocoQuestoes';
