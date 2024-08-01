@@ -5,46 +5,13 @@ const screenWidth = Dimensions.get('window').width;
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9F9F9',
-    paddingTop: '5%',
-    justifyContent: 'center', 
-    alignItems: 'center'
-  },
-  containerPra:{
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '100%',
-    height: '100%',
-    marginBottom: '20%',
-  },
-  containerPraS:{
-    width: '100%',
-    height: '100%',
-    marginTop: '30%',
-    marginBottom: '10%',
-  },
-  navNum:{
-    flexDirection: 'row-reverse',
-    alignItems: 'center',
-    width: '90%',
-    height: 5,
-    marginRight: '5%',
-    marginBottom: '3%',
-    marginTop: 0,
-    borderColor: '#000'
-  },
-  textN:{
-    fontSize: 15,
-  },
-  containerCal:{
-    margin: '5%',
-    justifyContent: 'center', 
-    alignItems: 'center'
+    backgroundColor: theme.colors.white_2,
+    paddingTop: 200,
   },
   contentContainer: {
     flex: 1,
-    padding: 20,
-    justifyContent: 'flex-start', // Alinha os componentes no início do container
+    padding: 10,
+    justifyContent: 'flex-start',
   },
   text: {
     fontSize: 20,

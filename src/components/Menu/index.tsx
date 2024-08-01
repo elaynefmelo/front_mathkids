@@ -3,9 +3,11 @@ import { View, TouchableOpacity, Text } from 'react-native';
 import { useRouter } from 'expo-router';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { styles } from './styles';
+import Sair from '../../app/sair';
 
 const Menu = () => {
   const [selectedOption, setSelectedOption] = useState<string>('');
+  const [isSairVisible, setIsSairVisible] = useState<boolean>(false);
   const router = useRouter();
 
   const menuOptions = [
@@ -16,8 +18,16 @@ const Menu = () => {
   ];
 
   const handlePress = (label: string, route: string) => {
-    setSelectedOption(label);
-    router.push(route);
+    if (label === 'Sair') {
+      setIsSairVisible(true);
+    } else {
+      setSelectedOption(label);
+      router.push(route);
+    }
+  };
+
+  const handleCloseSair = () => {
+    setIsSairVisible(false);
   };
 
   return (
@@ -37,6 +47,7 @@ const Menu = () => {
           </TouchableOpacity>
         );
       })}
+      {isSairVisible && <Sair isVisible={isSairVisible} onClose={handleCloseSair} />}
     </View>
   );
 };
