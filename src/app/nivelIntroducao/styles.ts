@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F9F9F9',
-    paddingTop: '20%',
+    paddingTop: '5%',
     justifyContent: 'center', 
     alignItems: 'center'
   },
@@ -30,11 +30,11 @@ export const styles = StyleSheet.create({
     height: 5,
     marginRight: '5%',
     marginBottom: '3%',
-    marginTop: 10,
+    marginTop: 0,
     borderColor: '#000'
   },
   textN:{
-    fontSize: 20,
+    fontSize: 15,
   },
   containerCal:{
     margin: '5%',
@@ -43,8 +43,8 @@ export const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 1,
-    padding: 20,
-    justifyContent: 'flex-start', // Alinha os componentes no início do container
+    padding: 10,
+    justifyContent: 'flex-start',
   },
   text: {
     fontSize: 20,
