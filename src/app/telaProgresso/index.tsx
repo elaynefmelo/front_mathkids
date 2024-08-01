@@ -42,7 +42,6 @@ export default function TelaProgresso() {
                 title="Progresso"
                 iconSource={require('@/src/assets/Growth.png')}
             />
-            
             <ScrollView style={styles.conteinerSec}>
                 <Progresso/>
                 <Text style={styles.textoT}>Progresso por atividade</Text>

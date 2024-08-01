@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { styles } from "./styles";
 import Header from '@/src/components/Header';
 import BackButton from '@/src/components/BackButton';
@@ -11,11 +11,8 @@ import ButtonC from '@/src/components/ButtonCalcu';
 
 const Pratica = () => {
 
-  const irParaPratica1 = () => {
-    router.navigate("/cadastro/")
-  }
   const irParaPratica2 = () => {
-    router.navigate("/cadastro/")
+    router.navigate('/nivelIntroducao/pratica2')
   }
   return (
     <View style={styles.container}>
@@ -24,24 +21,26 @@ const Pratica = () => {
           iconSource={require('@/src/assets/Drawing.png')}
         />
         <BackButton />
-        <View style={styles.navNum}>
-          
-        </View>
-        <View style={styles.containerPra}>
-          <BlocoQuestoes title={'Qual sinal usamos para fazer as somas?'} />
-          <View style={styles.containerCal}>
-            <View style={styles.buttonCalculo}>
-              <ButtonC textobotao='=' pressione={irParaPratica2} />
-              <ButtonC textobotao='x' pressione={irParaPratica2} />
+        <ScrollView style={styles.containerPraS}>
+          <View style={styles.containerPra}>
+            <View style={styles.navNum}>
+                <Text style={styles.textN}>1/2</Text>
             </View>
-            <View style={styles.buttonCalculo}>
-              <ButtonC textobotao='+' pressione={irParaPratica2} />
-              <ButtonC textobotao='-' pressione={irParaPratica2} />
+            <BlocoQuestoes title={'Qual sinal usamos para fazer as somas?'} />
+            <View style={styles.containerCal}>
+              <View style={styles.buttonCalculo}>
+                <ButtonC textobotao='=' pressione={irParaPratica2} />
+                <ButtonC textobotao='x' pressione={irParaPratica2} />
+              </View>
+              <View style={styles.buttonCalculo}>
+                <ButtonC textobotao='+' pressione={irParaPratica2} />
+                <ButtonC textobotao='-' pressione={irParaPratica2} />
+              </View>
             </View>
+            <Button textobotao='Verificar' pressione={irParaPratica2}  />
           </View>
-          
-          <Button textobotao='Verificar' pressione={irParaPratica2}  />
-        </View>
+
+        </ScrollView>
         
     </View>
   );

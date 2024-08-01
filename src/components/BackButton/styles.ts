@@ -4,9 +4,9 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
     container: {
         position: 'absolute',
-        top: 140, 
-        left: 10, 
-        zIndex: 1, 
+        top: 120, 
+        left: 15, 
+        zIndex: 1,
     },
     button: {
         flexDirection: 'row',

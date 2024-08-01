@@ -5,16 +5,17 @@ import { theme } from "@/src/thema";
 export const styles = StyleSheet.create({
     container:{
         flex: 1,
-        padding: 24,
-        backgroundColor: theme.colors.gray_8,
+        backgroundColor: '#F9F9F9',
         justifyContent: 'center',
         alignItems: 'center',
+        width: '100%',
+        height: '100%'
     },
     conteinerSec:{
         width: '100%',
-        paddingVertical: 20,
+        padding: 24,
         margin: '10%',
-        marginTop:'25%',
+        marginTop:'35%',
     },
     imageV:{
         width:40,
@@ -29,10 +30,11 @@ export const styles = StyleSheet.create({
         borderRadius: 15,
         borderColor: 'gray',
         borderWidth: 1,
+        backgroundColor: '#FFFFFF',
     },
     barContainer: {
         flexDirection:'row',
-        justifyContent: 'space-evenly'
+        justifyContent: 'space-evenly',
         // Garante que o conteúdo dentro do container não ultrapasse os limites definidos
     },  
     texto:{
@@ -44,6 +46,9 @@ export const styles = StyleSheet.create({
         margin: 15,
         fontSize: 22,
         color: '#7600B5',
+        alignContent: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     textoP:{
         margin: 10,

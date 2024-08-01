@@ -3,13 +3,15 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   barContainer: {
     width: '95%',
-    height: '15%',
+    height: '20%',
     borderRadius: 15,
     borderColor: 'gray',
     borderWidth: 1,
     justifyContent: 'center',
     alignItems: 'center',
     overflow: 'hidden', 
+    backgroundColor: '#FFFFFF',
+    padding:'5%',
   },
   caixaBar: {
     flexDirection: 'row',
