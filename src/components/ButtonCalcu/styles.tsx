@@ -7,8 +7,8 @@ export const styles = StyleSheet.create({
     button: {
         padding: 10,
         backgroundColor: '#FFFFFF',
-        width: 150, 
-        height: 150,
+        width: 100, 
+        height: 100,
         justifyContent:'center',
         alignItems: 'center',
         borderRadius: 20, 
@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     },
     buttonText: {
         color: '#7600B5',
-        fontSize: 70,
+        fontSize: 50,
         fontFamily: theme.fonts.family.bold,
     },
     gradiente: {

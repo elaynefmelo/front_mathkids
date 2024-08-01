@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F9F9F9',
-    paddingTop: '5%',
+    paddingTop: '20%',
     justifyContent: 'center', 
     alignItems: 'center'
   },
@@ -30,11 +30,11 @@ export const styles = StyleSheet.create({
     height: 5,
     marginRight: '5%',
     marginBottom: '3%',
-    marginTop: 0,
+    marginTop: 10,
     borderColor: '#000'
   },
   textN:{
-    fontSize: 15,
+    fontSize: 20,
   },
   containerCal:{
     margin: '5%',

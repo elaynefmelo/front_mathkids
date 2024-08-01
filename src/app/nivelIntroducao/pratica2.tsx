@@ -30,7 +30,7 @@ const Pratica2 = () => {
             </View>
             <BlocoQuestoes title={'Qual a soma dos ovinhos?'} />
             <View style={styles.containerCal}>
-              <View style={styles.somaI}>
+              <View style={styles.soma}>
                   <Image 
                       source={require('@/src/assets/somaOvo.png')}
                       style={styles.somaI}
