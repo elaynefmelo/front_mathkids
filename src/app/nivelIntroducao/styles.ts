@@ -15,7 +15,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     height: '100%',
-    marginBottom: '20%',
+    marginBottom: '30%',
+    marginTop: '5%',
   },
   containerPraS:{
     width: '100%',
@@ -75,9 +76,11 @@ export const styles = StyleSheet.create({
     padding:'5%',
     alignItems: 'center',
     justifyContent:'center',
+    marginBottom: '10%',
   },
   somaI:{
-    width: 400,   
-    height: 150,
+    width: 350,   
+    height: 130,
+    margin: '10%',
   },
 });

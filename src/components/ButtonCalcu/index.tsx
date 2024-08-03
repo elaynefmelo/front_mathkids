@@ -1,18 +1,19 @@
 import React from 'react'
-import { Text, TouchableOpacity } from 'react-native'
+import { Text, TouchableOpacity, ViewStyle } from 'react-native'
 import { styles } from './styles';
 import { LinearGradient } from "expo-linear-gradient"
 
 interface ButtonCalcu {
     textobotao: string;
     pressione: () => void;
+    style?: ViewStyle;
 }
 
-const ButtonC: React.FC<ButtonCalcu>= ({ textobotao, pressione }) => {
+const ButtonC: React.FC<ButtonCalcu>= ({ textobotao, pressione, style }) => {
     return (
-        <TouchableOpacity style={[styles.button]} onPress={pressione}>
-            <Text style={styles.buttonText}> {textobotao} </Text>    
-       </TouchableOpacity>
+        <TouchableOpacity onPress={pressione} style={[styles.button, style]}>
+      <Text style={styles.buttonText}>{textobotao}</Text>
+    </TouchableOpacity>
     )
 }
 
