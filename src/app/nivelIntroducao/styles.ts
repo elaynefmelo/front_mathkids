@@ -10,35 +10,43 @@ export const styles = StyleSheet.create({
     justifyContent: 'center', 
     alignItems: 'center'
   },
+  containerP: {
+    flex: 1,
+    backgroundColor: '#F9F9F9',
+    paddingTop: '5%',
+    justifyContent: 'center', 
+    alignItems: 'center'
+  },
   containerPra:{
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
     height: '100%',
-    marginBottom: '30%',
-    marginTop: '5%',
+    padding: '10%',
+
   },
   containerPraS:{
     width: '100%',
     height: '100%',
-    marginTop: '30%',
-    marginBottom: '10%',
+    margin:'20%',
+    paddingTop:'20%',
+
   },
-  navNum:{
-    flexDirection: 'row-reverse',
-    alignItems: 'center',
+  navNum: {
+    flex: 1,
+    flexDirection: 'row-reverse', 
+    justifyContent: 'space-between',
+    alignItems: 'center', 
     width: '90%',
-    height: 5,
-    marginRight: '5%',
-    marginBottom: '3%',
-    marginTop: 0,
-    borderColor: '#000'
+    height: '10%',
+    marginTop: '10%',
   },
   textN:{
-    fontSize: 15,
+    fontSize: 20,
+    color: 'gray',
   },
   containerCal:{
-    margin: '5%',
+    padding: '5%',
     justifyContent: 'center', 
     alignItems: 'center'
   },
@@ -56,19 +64,20 @@ export const styles = StyleSheet.create({
       justifyContent: 'center'
   },
   praticaText:{
-    width: 400,   // 95% da largura da tela
-    height: '100%', // Altura fixa
-    padding:'5%',
+    width: 300, 
+    height: '100%', 
     borderColor: 'gray',
     borderWidth: 1,
     borderRadius: 5,
     backgroundColor: '#fff',
     textAlignVertical: 'top',
     fontSize: 15,
+    flexWrap: 'wrap',
   },
   spacoT:{
     width: '100%',
-    height: '30%',
+    height: '40%',
+    padding:'5%',
   },
   soma:{
     width: '60%',   
@@ -76,11 +85,10 @@ export const styles = StyleSheet.create({
     padding:'5%',
     alignItems: 'center',
     justifyContent:'center',
-    marginBottom: '10%',
   },
   somaI:{
-    width: 350,   
-    height: 130,
+    width: 300,   
+    height: 100,
     margin: '10%',
   },
 });

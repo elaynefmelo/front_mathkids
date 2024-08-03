@@ -28,7 +28,7 @@ const Pratica2 = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.containerP}>
       <Header
         title="Prática"
         iconSource={require('@/src/assets/Drawing.png')}
