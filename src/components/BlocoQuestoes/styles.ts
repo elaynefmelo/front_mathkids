@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     elevation: 2,
     width: screenWidth - 50,
     marginHorizontal: 10,
-    marginBottom: 20,
+    marginBottom: 10,
   },
   title: {
     fontSize: 18,

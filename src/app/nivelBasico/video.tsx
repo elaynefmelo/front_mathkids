@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View} from 'react-native';
 import { styles } from "./styles";
 import Header from '@/src/components/Header';
 import BackButton from '@/src/components/BackButton';
 import BlocoQuestoes from '@/src/components/BlocoQuestoes';
+import VideoScreen from '@/src/components/VideoComponent/VideoScreen';
 
 const Video = () => {
   return (
@@ -13,7 +14,10 @@ const Video = () => {
           iconSource={require('@/src/assets/Video.png')}
         />
       <BackButton />
-      <BlocoQuestoes title={'Vamos assistir um vídeo e aprender'} />
+      <View style={styles.contentContainer}>
+        <BlocoQuestoes title={'Vamos assistir um vídeo e aprender!'} />
+        <VideoScreen moduleId={2} />
+      </View>
     </View>
   );
 };

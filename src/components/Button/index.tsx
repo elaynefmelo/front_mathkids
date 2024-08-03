@@ -20,4 +20,4 @@ const Button: React.FC<ButtonProps>= ({ textobotao, pressione }) => {
     )
 }
 
-export default Button 
+export default Button

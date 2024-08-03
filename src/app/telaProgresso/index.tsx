@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, FlatList, Image} from "react-native";
+import { View, Text, FlatList, Image, ScrollView} from "react-native";
 import { styles } from "./styles";
 import Menu from "@/src/components/Menu";
 import Header from '@/src/components/Header';
@@ -42,8 +42,8 @@ export default function TelaProgresso() {
                 title="Progresso"
                 iconSource={require('@/src/assets/Growth.png')}
             />
-            <Progresso/>
-            <View style={styles.conteinerSec}>
+            <ScrollView style={styles.conteinerSec}>
+                <Progresso/>
                 <Text style={styles.textoT}>Progresso por atividade</Text>
                 <View style={styles.progreEta}>
                     <View style={styles.barContainer}>
@@ -95,7 +95,7 @@ export default function TelaProgresso() {
                         <Text style={styles.textoP}>{item5.task}</Text>
                     </View>
                 </View>
-            </View>
+            </ScrollView>
             <Menu />
         </View>
     )

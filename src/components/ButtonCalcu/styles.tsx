@@ -6,23 +6,22 @@ import { theme } from "@/src/thema"
 export const styles = StyleSheet.create({
     button: {
         padding: 10,
-        backgroundColor: theme.colors.green_p,
-        width: 370, 
-        height: 60,
+        backgroundColor: '#FFFFFF',
+        width: 100, 
+        height: 100,
         justifyContent:'center',
         alignItems: 'center',
         borderRadius: 20, 
-        marginBottom: 10,
+        margin: 15,
         borderWidth: 0.4,
         borderColor: theme.colors.border,
         overflow: 'hidden', 
         elevation: 8,
-        color: '#FFFFFF'
 
     },
     buttonText: {
-        color: theme.colors.purple_p,
-        fontSize: theme.fonts.size.heading.lg,
+        color: '#7600B5',
+        fontSize: 50,
         fontFamily: theme.fonts.family.bold,
     },
     gradiente: {
