@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Image, ScrollView } from 'react-native';
-import { styles } from "./styles";
+import { styles } from "../nivelIntroducao/styles";
 import Header from '@/src/components/Header';
 import BackButton from '@/src/components/BackButton';
 import BlocoQuestoes from '@/src/components/BlocoQuestoes';
-import Button from "@/src/components/Button";
 import { router } from "expo-router";
 import PopUp from '../avisos/avisos';
+import Button from '@/src/components/Button';
 
-const Revisao = () => {
+const Pratica2 = () => {
   const [isCorrectPopUpVisible, setIsCorrectPopUpVisible] = useState(false);
   const [isIncorrectPopUpVisible, setIsIncorrectPopUpVisible] = useState(false);
   const [value, setValue] = useState('');
 
   const verificarResposta = () => {
-    if (value.trim() === '3') {
+    if (value.trim() === '2') {
       setIsCorrectPopUpVisible(true);
     } else {
       setIsIncorrectPopUpVisible(true);
@@ -30,8 +30,8 @@ const Revisao = () => {
   return (
     <View style={styles.containerP}>
       <Header
-        title="Revisão"
-        iconSource={require('@/src/assets/Idea.png')}
+        title="Prática"
+        iconSource={require('@/src/assets/Drawing.png')}
       />
       <BackButton />
       <ScrollView style={styles.containerPraS}>
@@ -39,32 +39,31 @@ const Revisao = () => {
           <View style={styles.navNum}>
               <Text style={styles.textN}>2/2</Text>
           </View>
-          <BlocoQuestoes title={'Qual a soma dos ratinhos?'} />
+          <BlocoQuestoes title={'Qual a soma dos ovinhos?'} />
           <View style={styles.containerCal}>
             <View style={styles.soma}>
                 <Image 
-                    source={require('@/src/assets/somaRato.png')}
+                    source={require('@/src/assets/somaOvo.png')}
                     style={styles.somaI}
                 />
-            </View>
+            </View >
             <View style={styles.spacoT}>
               <TextInput
                   value={value}
                   onChangeText={text => setValue(text)}
                   maxLength={40}
-                  multiline={true}
-                  style={styles.praticaText} // Aplicação do estilo
+                  style={styles.praticaText}
               />
             </View>
           </View>
-          <Button textobotao='Verificar' pressione={verificarResposta} />
+          <Button textobotao='Verificar' pressione={verificarResposta}  />
         </View>
       </ScrollView>
       <PopUp 
           isVisible={isCorrectPopUpVisible} 
           onClose={handleClosePopUp} 
           title="Parabéns!!"
-          subtitle="Você acertou a resposta!"
+          subtitle="Você acertou todas as questões"
           imageSource={require('../../assets/Kiss.png')} 
           buttonText="OK"
         />
@@ -80,4 +79,4 @@ const Revisao = () => {
   );
 };
 
-export default Revisao;
+export default Pratica2;
