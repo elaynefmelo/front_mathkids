@@ -28,7 +28,7 @@ const Revisao = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.containerP}>
       <Header
         title="Revisão"
         iconSource={require('@/src/assets/Idea.png')}
