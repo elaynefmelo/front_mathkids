@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView } from 'react-native';
-import { styles } from "./styles";
+import { styles } from "../nivelIntroducao/styles";
 import Header from '@/src/components/Header';
 import BackButton from '@/src/components/BackButton';
 import BlocoQuestoes from '@/src/components/BlocoQuestoes';
@@ -47,11 +47,11 @@ const Pratica = () => {
   const handleClosePopUp = (p0: boolean) => {
     setIsCorrectPopUpVisible(false);
     setIsIncorrectPopUpVisible(false);
-    router.navigate('/nivelIntroducao/pratica2'); // Navegar para a próxima página independentemente da resposta
+    router.navigate('/nivelBasico2/praticaB2'); 
   }
 
   return (
-    <View style={styles.container}>
+    <View style={styles.containerP}>
        <Header
           title="Prática"
           iconSource={require('@/src/assets/Drawing.png')}

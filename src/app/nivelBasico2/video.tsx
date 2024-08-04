@@ -16,7 +16,7 @@ const Video = () => {
       <BackButton />
       <View style={styles.contentContainer}>
         <BlocoQuestoes title={'Vamos assistir um vídeo e aprender!'} />
-        <VideoScreen moduleId={2} />
+        <VideoScreen moduleId={3} />
       </View>
     </View>
   );

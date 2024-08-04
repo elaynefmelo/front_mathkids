@@ -1,34 +1,77 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Image, ScrollView } from 'react-native';
-import { styles } from "./styles";
+import { styles } from "../nivelIntroducao/styles";
 import Header from '@/src/components/Header';
 import BackButton from '@/src/components/BackButton';
 import BlocoQuestoes from '@/src/components/BlocoQuestoes';
-import Button from "@/src/components/Button";
 import { router } from "expo-router";
 import PopUp from '../avisos/avisos';
+import Button from '@/src/components/Button';
+import { AppConfig } from '@/src/config/config';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const Pratica2 = () => {
+const PraticaB2 = () => {
   const [isCorrectPopUpVisible, setIsCorrectPopUpVisible] = useState(false);
   const [isIncorrectPopUpVisible, setIsIncorrectPopUpVisible] = useState(false);
   const [value, setValue] = useState('');
+  const [userId, setUserId] = useState<number | null>(null);
 
-  const verificarResposta = () => {
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const data = await AsyncStorage.getItem('userData');
+      if (data) {
+        const parsedData = JSON.parse(data);
+        setUserId(parsedData.id);  
+      }
+    };
+
+    fetchUserData();
+  }, []);
+
+  const verificarResposta = async () => {
+    // Verificar a resposta
     if (value.trim() === '2') {
       setIsCorrectPopUpVisible(true);
     } else {
       setIsIncorrectPopUpVisible(true);
+    }
+
+    if (userId !== null) {
+      try {
+        const response = await fetch(`${AppConfig.baseUrl}/progress-user/${userId}`);
+        const progressData = await response.json();
+
+        if (progressData.progress) {
+          const currentCompletedActivities = progressData.progress.completedActivities || 0;
+
+          if (currentCompletedActivities < 2) {
+            const newCompletedActivities = currentCompletedActivities + 1;
+
+            await fetch(`${AppConfig.baseUrl}/update-completedActivities/${userId}`, {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                completedActivities: newCompletedActivities
+              }),
+            });
+          }
+        }
+      } catch (error) {
+        console.error('Erro ao atualizar completedActivities:', error);
+      }
     }
   };
 
   const handleClosePopUp = () => {
     setIsCorrectPopUpVisible(false);
     setIsIncorrectPopUpVisible(false);
-    router.navigate('/telaAulas/'); // Navegar para a próxima página após fechar qualquer pop-up
+    router.navigate('/telaAulas'); 
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.containerP}>
       <Header
         title="Prática"
         iconSource={require('@/src/assets/Drawing.png')}
@@ -79,4 +122,4 @@ const Pratica2 = () => {
   );
 };
 
-export default Pratica2;
+export default PraticaB2;
