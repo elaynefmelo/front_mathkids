@@ -1,11 +1,9 @@
 import { StyleSheet } from "react-native";
 import { theme } from "@/src/thema";
 
-
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        
         backgroundColor: theme.colors.gray_8,
     },
     scrollViewContent: {
@@ -40,6 +38,11 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: theme.colors.purple_p,
     },
+    optionContainer: {
+        width: '100%',
+        alignItems: 'center',
+        marginBottom: 20,
+    },
     optionButton: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -47,9 +50,9 @@ export const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: theme.colors.gray_4, 
         borderRadius: 20,
-        marginBottom: 20,
         backgroundColor: theme.colors.white,
-        width: '55%', 
+        width: '90%', 
+        justifyContent: 'center',
     },
     optionIcon: {
         width: 30,
@@ -59,5 +62,45 @@ export const styles = StyleSheet.create({
     optionText: {
         fontSize: 16,
         color: theme.colors.gray_3,
+    },
+    balloon: {
+        backgroundColor: theme.colors.white,
+        borderRadius: 10,
+        padding: 10,
+        borderWidth: 1,
+        borderColor: theme.colors.gray_4,
+        marginVertical: 5,
+        width: '100%',
+    },
+    input: {
+        height: 40,
+        borderColor: theme.colors.gray_4,
+        borderWidth: 1,
+        borderRadius: 5,
+        paddingHorizontal: 10,
+        backgroundColor: theme.colors.white,
+        flex: 1,
+    },
+    eyeButton: {
+        position: 'absolute',
+        right: 10,
+    },
+    eyeIcon: {
+        width: 24,
+        height: 24,
+    },
+    saveButton: {
+        backgroundColor: theme.colors.green_p,
+        padding: 15,
+        borderRadius: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '60%',
+        marginVertical: 20,
+    },
+    saveButtonText: {
+        color: theme.colors.white,
+        fontSize: 16,
+        fontWeight: 'bold',
     },
 });
