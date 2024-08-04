@@ -24,7 +24,7 @@ const Pratica2 = () => {
   const handleClosePopUp = () => {
     setIsCorrectPopUpVisible(false);
     setIsIncorrectPopUpVisible(false);
-    router.navigate('/telaAulas/'); // Navegar para a próxima página após fechar qualquer pop-up
+    router.navigate('/telaAulas'); // Navegar para a próxima página após fechar qualquer pop-up
   };
 
   return (
