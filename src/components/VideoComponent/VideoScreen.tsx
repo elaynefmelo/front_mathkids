@@ -20,14 +20,14 @@ export default function VideoScreen({ moduleId }: VideoScreenProps) {
   const [popUpTitle, setPopUpTitle] = useState('');
   const [popUpSubtitle, setPopUpSubtitle] = useState('');
   const [popUpImageSource, setPopUpImageSource] = useState<any>(null);
-  const [userId, setUserId] = useState<number | null>(null);  // Estado para armazenar o ID do usuário
+  const [userId, setUserId] = useState<number | null>(null);  
 
   useEffect(() => {
     const fetchUserData = async () => {
       const data = await AsyncStorage.getItem('userData');
       if (data) {
         const parsedData = JSON.parse(data);
-        setUserId(parsedData.id);  // Define o ID do usuário
+        setUserId(parsedData.id);  
       }
     };
 
@@ -65,19 +65,15 @@ export default function VideoScreen({ moduleId }: VideoScreenProps) {
   const handleVideoEnd = useCallback(async () => {
     if (userId !== null) {
       try {
-        // Primeiro, obtenha o progresso atual do usuário
         const progressResponse = await fetch(`${AppConfig.baseUrl}/progress-user/${userId}`);
         const progressData = await progressResponse.json();
 
         if (progressData.progress) {
-          // Verifique o número atual de vídeos assistidos
           const currentVideosWatchedCount = progressData.progress.videosWatched || 0;
 
-          // Incrementa o contador apenas se for menor que 3
           if (currentVideosWatchedCount < 3) {
             const newVideosWatchedCount = currentVideosWatchedCount + 1;
 
-            // Atualize o progresso do usuário
             await fetch(`${AppConfig.baseUrl}/update-videosWatched/${userId}`, {
               method: 'PUT',
               headers: {
