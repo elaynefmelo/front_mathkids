@@ -4,7 +4,7 @@ import { styles } from "./styles";
 
 export default function Progresso() {
   const barWidth = React.useRef(new Animated.Value(0)).current;
-  const progress = 90; // Aqui você pode definir o progresso desejado, inicialmente 50%
+  const progress = 5; // Aqui você pode definir o progresso desejado, inicialmente 50%
 
   useEffect(() => {
     Animated.spring(barWidth, {

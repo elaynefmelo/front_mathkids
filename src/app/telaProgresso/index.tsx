@@ -8,19 +8,19 @@ import Progresso from "@/src/components/Progresso";
 const progressoInd = [
     {
         id: 'video',
-        task:'1/10'
+        task:'1/3'
     },
-    {
-        id: 'aulas',
-        task:'1/10'
-    },
+    // {
+    //     id: 'aulas',
+    //     task:'1/10'
+    // },
     {
         id: 'pratica',
-        task:'1/10'
+        task:'1/2'
     },
     {
         id: 'revisão',
-        task:'1/10'
+        task:'1/1'
     },
     {
         id: 'rende',
@@ -31,10 +31,10 @@ const progressoInd = [
 export default function TelaProgresso() {
 
     const item1 = progressoInd[0];
-    const item2 = progressoInd[1];
-    const item3 = progressoInd[2];
-    const item4 = progressoInd[3];
-    const item5 = progressoInd[4];
+    // const item2 = progressoInd[1];
+    const item3 = progressoInd[1];
+    const item4 = progressoInd[2];
+    const item5 = progressoInd[3];
 
     return(
         <View style={styles.container}>
@@ -55,7 +55,7 @@ export default function TelaProgresso() {
                         <Text style={styles.textoP}>{item1.task}</Text>
                     </View>
                 </View>
-                <View style={styles.progreEta}>
+                {/* <View style={styles.progreEta}>
                     <View style={styles.barContainer}>
                         <Image
                             style={styles.imageV}
@@ -64,7 +64,7 @@ export default function TelaProgresso() {
                         <Text style={styles.texto}>Aulas concluídas</Text>
                         <Text style={styles.textoP}>{item2.task}</Text>
                     </View>
-                </View>
+                </View> */}
                 <View style={styles.progreEta}>
                     <View style={styles.barContainer}>
                         <Image
