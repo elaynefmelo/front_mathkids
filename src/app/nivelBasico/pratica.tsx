@@ -10,34 +10,34 @@ import ButtonC from '@/src/components/ButtonCalcu';
 import PopUp from '../avisos/avisos';
 
 type ButtonState = {
-  '=': boolean;
-  'x': boolean;
-  '+': boolean;
-  '-': boolean;
+  '3': boolean;
+  '4': boolean;
+  '5': boolean;
+  '6': boolean;
 };
 
 const Pratica = () => {
   const [isCorrectPopUpVisible, setIsCorrectPopUpVisible] = useState(false);
   const [isIncorrectPopUpVisible, setIsIncorrectPopUpVisible] = useState(false);
   const [buttonStates, setButtonStates] = useState<ButtonState>({
-    '=': false,
-    'x': false,
-    '+': false,
-    '-': false,
+    '3': false,
+    '4': false,
+    '5': false,
+    '6': false,
   });
 
   const handleButtonClick = (textobotao: keyof ButtonState) => {
     setButtonStates({
-      '=': false,
-      'x': false,
-      '+': false,
-      '-': false,
+      '3': false,
+      '4': false,
+      '5': false,
+      '6': false,
       [textobotao]: true,
     });
   };
 
   const verificarResposta = () => {
-    if (buttonStates['+']) {
+    if (buttonStates['5']) {
       setIsCorrectPopUpVisible(true);
     } else {
       setIsIncorrectPopUpVisible(true);
@@ -62,30 +62,30 @@ const Pratica = () => {
             <View style={styles.navNum}>
                 <Text style={styles.textN}>1/2</Text>
             </View>
-            <BlocoQuestoes title={'Qual sinal usamos para fazer as somas?'} />
+            <BlocoQuestoes title={'Qual número abaixo representaria cinco dinossauros?'} />
             <View style={styles.containerCal}>
               <View style={styles.buttonCalculo}>
                 <ButtonC
-                  textobotao='='
-                  pressione={() => handleButtonClick('=')}
-                  style={{ backgroundColor: buttonStates['='] ? 'green' : '#FFFF' }}
+                  textobotao='3'
+                  pressione={() => handleButtonClick('3')}
+                  style={{ backgroundColor: buttonStates['3'] ? 'green' : '#FFFF' }}
                 />
                 <ButtonC
-                  textobotao='x'
-                  pressione={() => handleButtonClick('x')}
-                  style={{ backgroundColor: buttonStates['x'] ? 'green' : '#FFFF' }}
+                  textobotao='4'
+                  pressione={() => handleButtonClick('4')}
+                  style={{ backgroundColor: buttonStates['4'] ? 'green' : '#FFFF' }}
                 />
               </View>
               <View style={styles.buttonCalculo}>
                 <ButtonC
-                  textobotao='+'
-                  pressione={() => handleButtonClick('+')}
-                  style={{ backgroundColor: buttonStates['+'] ? 'green' : '#FFFF' }}
+                  textobotao='5'
+                  pressione={() => handleButtonClick('5')}
+                  style={{ backgroundColor: buttonStates['5'] ? 'green' : '#FFFF' }}
                 />
                 <ButtonC
-                  textobotao='-'
-                  pressione={() => handleButtonClick('-')}
-                  style={{ backgroundColor: buttonStates['-'] ? 'green' : '#FFFF' }}
+                  textobotao='6'
+                  pressione={() => handleButtonClick('6')}
+                  style={{ backgroundColor: buttonStates['6'] ? 'green' : '#FFFF' }}
                 />
               </View>
             </View>
