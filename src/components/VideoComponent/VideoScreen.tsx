@@ -4,6 +4,7 @@ import { VideoComponent } from './index';
 import { styles } from './styles';
 import PopUp from "@/src/app/avisos/avisos";
 import ImageSource from "@/src/assets/Happy.png"; 
+import { AppConfig } from '@/src/config/config';
 
 interface VideoScreenProps {
   moduleId: number;
@@ -28,7 +29,7 @@ export default function VideoScreen({ moduleId }: VideoScreenProps) {
       }
 
       try {
-        const response = await fetch('https://mathkids-server.onrender.com/modules');
+        const response = await fetch(`${AppConfig.baseUrl}/modules`);
         const data = await response.json();
         const module = data.modules.find((mod: any) => mod.id === moduleId);
         if (module) {
