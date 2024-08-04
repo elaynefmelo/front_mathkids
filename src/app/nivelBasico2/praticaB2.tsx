@@ -10,7 +10,7 @@ import Button from '@/src/components/Button';
 import { AppConfig } from '@/src/config/config';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const Pratica2 = () => {
+const PraticaB2 = () => {
   const [isCorrectPopUpVisible, setIsCorrectPopUpVisible] = useState(false);
   const [isIncorrectPopUpVisible, setIsIncorrectPopUpVisible] = useState(false);
   const [value, setValue] = useState('');
@@ -36,7 +36,6 @@ const Pratica2 = () => {
       setIsIncorrectPopUpVisible(true);
     }
 
-    // Atualizar completedActivities
     if (userId !== null) {
       try {
         const response = await fetch(`${AppConfig.baseUrl}/progress-user/${userId}`);
@@ -45,7 +44,6 @@ const Pratica2 = () => {
         if (progressData.progress) {
           const currentCompletedActivities = progressData.progress.completedActivities || 0;
 
-          // Verificar se não precisa atualizar
           if (currentCompletedActivities < 2) {
             const newCompletedActivities = currentCompletedActivities + 1;
 
@@ -69,7 +67,7 @@ const Pratica2 = () => {
   const handleClosePopUp = () => {
     setIsCorrectPopUpVisible(false);
     setIsIncorrectPopUpVisible(false);
-    router.navigate('/telaAulas'); // Navegar para a próxima página após fechar qualquer pop-up
+    router.navigate('/telaAulas'); 
   };
 
   return (
@@ -84,11 +82,11 @@ const Pratica2 = () => {
           <View style={styles.navNum}>
               <Text style={styles.textN}>2/2</Text>
           </View>
-          <BlocoQuestoes title={'Quantos ovinhos aparecem abaixo?'} />
+          <BlocoQuestoes title={'Qual a soma dos ovinhos?'} />
           <View style={styles.containerCal}>
             <View style={styles.soma}>
                 <Image 
-                    source={require('@/src/assets/doisOvos.png')}
+                    source={require('@/src/assets/somaOvo.png')}
                     style={styles.somaI}
                 />
             </View >
@@ -124,4 +122,4 @@ const Pratica2 = () => {
   );
 };
 
-export default Pratica2;
+export default PraticaB2;
