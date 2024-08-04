@@ -6,6 +6,7 @@ import ButtonGoogle from '@/src/components/ButtonGoogle';
 import PopUp from '../avisos/avisos'; 
 import { router } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { AppConfig } from '@/src/config/config';
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -15,7 +16,7 @@ export default function Login() {
 
     const handleLogin = async () => {
         try {
-            const response = await fetch('http://mathkids-server.onrender.com/login', {
+            const response = await fetch(`${AppConfig.baseUrl}/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

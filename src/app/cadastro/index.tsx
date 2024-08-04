@@ -5,6 +5,7 @@ import ButtonAcess from '@/src/components/ButtonAcess';
 import ButtonGoogle from '@/src/components/ButtonGoogle';
 import PopUp from '../avisos/avisos';
 import { router } from 'expo-router';
+import { AppConfig } from '@/src/config/config';
 
 export default function Cadastro() {
     const [nome, setNome] = useState('');
@@ -22,7 +23,7 @@ export default function Cadastro() {
         }
 
         try {
-            const response = await fetch('http://mathkids-server.onrender.com/create-user', {
+            const response = await fetch(`${AppConfig.baseUrl}/create-user`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

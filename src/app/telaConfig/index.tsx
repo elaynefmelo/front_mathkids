@@ -7,6 +7,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import ButtonAcess from '@/src/components/ButtonAcess';
 import axios from 'axios';
 import PopUp from '../avisos/avisos'; 
+import { AppConfig } from "@/src/config/config";
 
 type User = {
     id: number;
@@ -54,14 +55,14 @@ export default function TelaConfig() {
         if (userData) {
             try {
                 
-                await axios.put(`http://mathkids-server.onrender.com/update-user/${userData.id}`, {
+                await axios.put(`${AppConfig.baseUrl}/update-user/${userData.id}`, {
                     name,
                     email: userData.email
                 });
 
                
                 if (senha) {
-                    await axios.put(`http://mathkids-server.onrender.com/configuration-password/${userData.id}`, {
+                    await axios.put(`${AppConfig.baseUrl}/configuration-password/${userData.id}`, {
                         newPassword: senha,
                         passwordConfirm: senha 
                     });
