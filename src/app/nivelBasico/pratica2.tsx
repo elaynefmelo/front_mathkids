@@ -84,11 +84,11 @@ const Pratica2 = () => {
           <View style={styles.navNum}>
               <Text style={styles.textN}>2/2</Text>
           </View>
-          <BlocoQuestoes title={'Qual a soma dos ovinhos?'} />
+          <BlocoQuestoes title={'Quantos ovinhos aparecem abaixo?'} />
           <View style={styles.containerCal}>
             <View style={styles.soma}>
                 <Image 
-                    source={require('@/src/assets/somaOvo.png')}
+                    source={require('@/src/assets/doisOvos.png')}
                     style={styles.somaI}
                 />
             </View >
