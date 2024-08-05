@@ -46,7 +46,6 @@ export const styles = StyleSheet.create({
     color: 'gray',
   },
   containerCal:{
-    padding: '5%',
     justifyContent: 'center', 
     alignItems: 'center'
   },

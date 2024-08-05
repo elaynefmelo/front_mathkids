@@ -35,7 +35,6 @@ export const styles = StyleSheet.create({
     barContainer: {
         flexDirection:'row',
         justifyContent: 'space-evenly',
-        // Garante que o conteúdo dentro do container não ultrapasse os limites definidos
     },  
     texto:{
         margin: 10,
@@ -46,9 +45,7 @@ export const styles = StyleSheet.create({
         margin: 15,
         fontSize: 22,
         color: '#7600B5',
-        alignContent: 'center',
-        alignItems: 'center',
-        justifyContent: 'center',
+        textAlign: 'center',
     },
     textoP:{
         margin: 10,

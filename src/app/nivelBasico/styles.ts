@@ -42,7 +42,7 @@ export const styles = StyleSheet.create({
   containerCal:{
     padding: '5%',
     justifyContent: 'center', 
-    alignItems: 'center'
+    alignItems: 'center',
   },
   contentContainer: {
     flex: 1,
