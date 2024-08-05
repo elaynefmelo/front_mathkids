@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
   containerPraS:{
     width: '100%',
     height: '100%',
-    margin:'20%',
+    margin:'10%',
     paddingTop:'20%',
 
   },

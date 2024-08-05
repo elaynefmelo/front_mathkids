@@ -3,13 +3,6 @@ import { StyleSheet, Dimensions } from 'react-native';
 const screenWidth = Dimensions.get('window').width;
 
 export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F9F9F9',
-    paddingTop: '5%',
-    justifyContent: 'center', 
-    alignItems: 'center'
-  },
   containerP: {
     flex: 1,
     backgroundColor: '#F9F9F9',
@@ -28,8 +21,9 @@ export const styles = StyleSheet.create({
   containerPraS:{
     width: '100%',
     height: '100%',
-    margin:'20%',
+    margin:'10%',
     paddingTop:'20%',
+    marginBottom: '10%',
 
   },
   navNum: {
