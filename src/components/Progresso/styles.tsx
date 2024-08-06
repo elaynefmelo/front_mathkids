@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   barContainer: {
-    width: '95%',
+    width: '100%',
     height: '20%',
     borderRadius: 15,
     borderColor: 'gray',

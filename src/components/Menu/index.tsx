@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useRouter, usePathname } from 'expo-router'; 
 import Icon from 'react-native-vector-icons/Ionicons';
 import { styles } from './styles';
 import Sair from '../../app/sair';
 
 const Menu = () => {
-  const [selectedOption, setSelectedOption] = useState<string>('');
+  const [selectedOption, setSelectedOption] = useState<string>('Aulas');
   const [isSairVisible, setIsSairVisible] = useState<boolean>(false);
   const router = useRouter();
+  const pathname = usePathname(); 
 
   const menuOptions = [
     { label: 'Aulas', icon: 'calculator-outline', route: '/telaAulas' },
@@ -16,6 +17,13 @@ const Menu = () => {
     { label: 'Config', icon: 'settings-outline', route: '/telaConfig' },
     { label: 'Sair', icon: 'log-out-outline', route: '/login' },
   ];
+
+  useEffect(() => {
+    const currentOption = menuOptions.find(option => option.route === pathname)?.label;
+    if (currentOption) {
+      setSelectedOption(currentOption);
+    }
+  }, [pathname]);
 
   const handlePress = (label: string, route: string) => {
     if (label === 'Sair') {
