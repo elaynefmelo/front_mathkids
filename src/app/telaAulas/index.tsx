@@ -44,7 +44,7 @@ const TelaAulas = () => {
                     <ActivityButton
                         iconSource={require('@/src/assets/Video.png')}
                         title="Vídeo"
-                        subtitle="Conteúdo da aula"
+                        subtitle="O que é matemática?"
                         status={activityStatus.video}
                         route="/nivelIntroducao/video"
                     />
@@ -58,14 +58,14 @@ const TelaAulas = () => {
                     <ActivityButton
                         iconSource={require('@/src/assets/Video.png')}
                         title="Vídeo"
-                        subtitle="Conteúdo da aula"
+                        subtitle="Números de 0 à 10"
                         status={activityStatus.video}
                         route="/nivelBasico/video"
                     />
                      <ActivityButton
                         iconSource={require('@/src/assets/Drawing.png')}
                         title="Prática"
-                        subtitle="Conteúdo da aula"
+                        subtitle="Números de 0 à 10"
                         status={activityStatus.video}
                         route="/nivelBasico/pratica"
                     />
@@ -78,7 +78,7 @@ const TelaAulas = () => {
                 <ActivityButton
                         iconSource={require('@/src/assets/Idea.png')}
                         title="Revisão"
-                        subtitle="Conteúdo da aula"
+                        subtitle="Números de 0 à 10"
                         status={activityStatus.video}
                         route="/nivelBasico2/revisao"
                     />
@@ -87,14 +87,14 @@ const TelaAulas = () => {
                     <ActivityButton
                         iconSource={require('@/src/assets/Video.png')}
                         title="Vídeo"
-                        subtitle="Conteúdo da aula"
+                        subtitle="Adição"
                         status={activityStatus.video}
                         route="/nivelBasico2/video"
                     />
                     <ActivityButton
                         iconSource={require('@/src/assets/Drawing.png')}
                         title="Prática"
-                        subtitle="Conteúdo da aula"
+                        subtitle="Adição"
                         status={activityStatus.video}
                         route="/nivelBasico2/pratica"
                     />
