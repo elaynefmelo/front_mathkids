@@ -11,6 +11,7 @@ export const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
+    borderTopWidth: 0,
   },
   menuItem: {
     alignItems: 'center',
@@ -22,9 +23,16 @@ export const styles = StyleSheet.create({
     marginTop: 5,
   },
   menuItemSelected: {
-    // Adicione aqui o estilo para item selecionado, se desejar
+    backgroundColor: theme.colors.gray_8,
+    borderTopLeftRadius: 0,
+    borderTopRightRadius: 0,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
+    paddingVertical: 15, 
+    marginTop: -10, 
+    zIndex: 1,
   },
   menuTextSelected: {
-    color: theme.colors.green_p,
+    color: theme.colors.purple_p,
   },
 });
