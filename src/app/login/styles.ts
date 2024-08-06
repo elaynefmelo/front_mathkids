@@ -58,5 +58,13 @@ export const styles = StyleSheet.create({
         color: theme.colors.white,
         fontFamily: theme.fonts.family.semiBold,
         fontSize: theme.fonts.size.body.md,
+    },
+    entrar: {
+        marginTop: 10,
+    },
+    textoEntrar: {
+        color: theme.colors.green_p,
+        fontFamily: theme.fonts.family.semiBold,
+        fontSize: theme.fonts.size.body.md,
     }
 })

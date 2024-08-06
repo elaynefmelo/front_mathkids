@@ -76,6 +76,14 @@ export default function Login() {
                     Ou entre com o Google
                 </Text>
                 <ButtonGoogle pressione={handleLogin} source={require('../../assets/google.png')} />
+                <TouchableOpacity style={styles.entrar} onPress={() => {
+                    setTimeout(() => {
+                        setIsPopUpVisible(false);
+                        router.navigate("/cadastro");
+                    }, 4000);
+                }}>
+                    <Text style={styles.textoEntrar}>Não possui conta? Cadastre-se</Text>
+                </TouchableOpacity>
             </View>
 
             <PopUp 
