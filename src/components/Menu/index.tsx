@@ -4,6 +4,7 @@ import { useRouter, usePathname } from 'expo-router';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { styles } from './styles';
 import Sair from '../../app/sair';
+import { theme } from '@/src/thema';
 
 const Menu = () => {
   const [selectedOption, setSelectedOption] = useState<string>('Aulas');
@@ -48,7 +49,7 @@ const Menu = () => {
             style={[styles.menuItem, isSelected && styles.menuItemSelected]}
             onPress={() => handlePress(option.label, option.route)}
           >
-            <Icon name={option.icon} size={24} color={isSelected ? 'green' : 'white'} />
+            <Icon name={option.icon} size={24} color={isSelected ? theme.colors.purple_p : 'white'} />
             <Text style={[styles.menuText, isSelected && styles.menuTextSelected]}>
               {option.label}
             </Text>
