@@ -40,6 +40,7 @@ export default function Cadastro() {
 
             if (response.status === 200) {
                 setPopUpMessage({ title: "Cadastro realizado", subtitle: "Usuário criado com sucesso" });
+                router.navigate("/login");
             } else {
                 setPopUpMessage({ title: "Erro no cadastro", subtitle: data.message || "Tente novamente" });
             }
