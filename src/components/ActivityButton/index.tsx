@@ -1,6 +1,6 @@
-import { styles } from './styles';
+import { styles } from './styles'
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, ImageSourcePropType, StyleSheet } from 'react-native';
+import { View, Text, Image, TouchableOpacity, StyleSheet, ImageSourcePropType } from 'react-native';
 import { useRouter } from 'expo-router';
 
 interface ActivityButtonProps {
@@ -9,10 +9,9 @@ interface ActivityButtonProps {
   subtitle: string;
   status: 'notStarted' | 'inProgress' | 'completed';
   route: string;
-  color?: string; // Propriedade color opcional
 }
 
-const ActivityButton: React.FC<ActivityButtonProps> = ({ iconSource, title, subtitle, status, route, color }) => {
+const ActivityButton: React.FC<ActivityButtonProps> = ({ iconSource, title, subtitle, status, route }) => {
   const router = useRouter();
 
   const getStatusStyles = () => {
@@ -28,13 +27,9 @@ const ActivityButton: React.FC<ActivityButtonProps> = ({ iconSource, title, subt
     }
   };
 
-  const handlePress = () => {
-    router.push(route as any); // Usando 'as any' para contornar o erro de tipo
-  };
-
   return (
-    <TouchableOpacity style={styles.buttonContainer} onPress={handlePress}>
-      <View style={[styles.circle, getStatusStyles(), color ? { backgroundColor: color } : {}]}>
+    <TouchableOpacity style={styles.buttonContainer} onPress={() => router.push(route)}>
+      <View style={[styles.circle, getStatusStyles()]}>
         <Image source={iconSource} style={styles.icon} />
       </View>
       <Text style={styles.title}>{title}</Text>
