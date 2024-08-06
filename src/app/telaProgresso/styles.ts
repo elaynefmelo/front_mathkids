@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
     progreEta:{
         padding: 10,
         margin: 15,
-        width: '95%',
+        width: '93%',
         height: 60,
         borderRadius: 15,
         borderColor: 'gray',
@@ -52,5 +52,5 @@ export const styles = StyleSheet.create({
         fontSize:16,
         color: '#7600B5',
     },
-
+    
 })
